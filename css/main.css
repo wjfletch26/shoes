@@ -86,7 +86,7 @@ section {
 .btn:hover,
 .btn:focus {
   /* -webkit-transform: scale(9.1); */
-  transform: scale(1.3);
+  transform: scale(1.);
   opacity: 0.4; scale
 }
 

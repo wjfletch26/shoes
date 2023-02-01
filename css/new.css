@@ -32,11 +32,19 @@ section {
   margin: 0 auto;
 }
 
+/* Use the following to learn about CSS selectors: 
+https://www.w3schools.com/cssref/css_selectors.php
+https://https://www.youtube.com/watch?v=TbfIyjNTXbA
+www.youtube.com/watch?v=hqPJHOqW-_I */
+/* In video https://www.youtube.com/watch?v=X1dz0xRbSJc&t=1417s at time 22:16 the below gets explained. */
+.spacing > * + * {
+  margin-top: var(--spacer, 2rem);
+}
+
 .split {
   display: flex;
   gap: 1em;
   flex-wrap: wrap;
-  justify-content: center;
 }
 .split > * {
   flex-basis: 30%;
@@ -48,27 +56,32 @@ section {
 }
 
 .btn {
+  /* FONT PROPERTIES */
   display: inline-block;
   text-decoration: none;
   color: var(--clr-text, #fff);
   font-weight: 700;
   text-transform: uppercase;
   font-size: 1.125rem;
+  /* Button characteristics */
   padding: 0.5em 1.25em;
-  background: var(--clr-accent, blue);
+  background: var(--clr-accent, rgb(48, 79, 220));
   border-radius: 0.25em;
-  transition: transform 250ms ease-in-out, opacity 250ms linear;
+  /* BUTTON TRANSFORMATION characteristics */
+  -webkit-transition: opacity 250ms linear, -webkit-transform 250ms ease-in-out;
 }
 
 .btn:hover,
 .btn:focus {
-  transform: scale(1.1);
-  opacity: 0.9;
+  /* -webkit-transform: scale(9.1); */
+  transform: scale(1.3);
+  opacity: 0.4;
 }
 
 .primary-title {
   font-size: 4rem;
   font-size: clamp(3rem, 5vw + 1rem, 4.5rem);
+  /* The clamp(smallest, grow rate, largest) CSS function clamps a middle value within a range of values between a defined minimum bound and a maximum bound. The function takes three parameters: a minimum value, a preferred value, and a maximum allowed value. */
   line-height: 1;
   text-transform: uppercase;
 }
@@ -77,10 +90,12 @@ section {
   text-align: center;
   font-size: clamp(2.5rem, 5vw + 1rem, 4rem);
   line-height: 1;
-  color: #17353d;
+  /* color: rgb(147, 44, 44); */
+  color: rgb(52, 44, 147);
   margin-bottom: 5rem;
 }
 
+/* When using a SAS - The @supports CSS at-rule lets you specify CSS declarations that depend on a browser's support for CSS features. Using this at-rule is commonly called a feature query. The rule must be placed at the top level of your code or nested inside any other conditional group at-rule. video explination GO TO:21:20 @ https://www.youtube.com/watch?v=X1dz0xRbSJc&list=RDCMUC29ju8bIPH5as8OGnQzwJyA&index=4  */
 .hero {
   color: white;
   text-align: center;
@@ -89,16 +104,18 @@ section {
 }
 @supports (background-blend-mode: multiply) {
   .hero {
-    background: url(../img/shoe-3.png), radial-gradient(#444, #111);
+    background: url(../img/shoe-3.png), radial-gradient(rgb(147, 44, 44), rgb(56, 39, 142));
+    /* background: url(../img/shoe-3.png), radial-gradient(#444, #111); */
     background-blend-mode: multiply;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center center;
+    background-size: 25%;
+    /* background-attachment: fixed;
+     background-repeat: no-repeat;
+     background-position: center center; */
   }
 }
 
 .featured {
-  background: #eee;
+  background: rgb(242, 222, 222);
 }
 .featured__item {
   display: block;
@@ -106,12 +123,12 @@ section {
   transform: scale(0.85);
   transition: transform 250ms ease-in-out;
   text-decoration: none;
-  color: #333;
+  color: rgb(52, 44, 147);
   text-align: center;
   line-height: 1.2;
 }
 .featured__item:hover, .featured__item:focus {
-  transform: scale(1);
+  transform: scale(1.1);
 }
 .featured__item:hover .featured__details, .featured__item:focus .featured__details {
   opacity: 1;
@@ -133,68 +150,6 @@ section {
 }
 .featured__details span {
   display: block;
-  font-weight: 700;
-  font-size: 2.5rem;
-}
-
-.product {
-  background: radial-gradient(var(--clr-inner, limegreen), var(--clr-outer, purple));
-  padding: 3em;
-  border-radius: 1em;
-  margin-bottom: 5em;
-  text-align: center;
-}
-.product__title {
-  font-size: clamp(3rem, 5vw + 1rem, 5.5rem);
-  text-transform: uppercase;
-  line-height: 1;
-  color: #fff;
-  text-shadow: 0 0 0.2em rgba(0, 0, 0, 0.2);
-}
-.product__image {
-  margin: -5em 0 0 0;
-}
-@media (min-width: 45em) {
-  .product {
-    text-align: left;
-    margin-bottom: 9em;
-  }
-  .product__title {
-    margin: 0;
-  }
-  .product__image {
-    float: right;
-    width: 65%;
-    shape-outside: url(../img/shoe-1.png);
-    shape-margin: 1em;
-    margin: 0 -5em 0 0;
-  }
-  .product.shoe-left .product__image {
-    float: left;
-    shape-outside: url(../img/shoe-2.png);
-    margin: 0 0 0 -5em;
-    shape-margin: 2em;
-  }
-}
-
-.hero {
-  --clr-accent: #faa700;
-}
-
-.shoe-red {
-  --clr-inner: #faa700;
-  --clr-outer: #e48d00;
-  --clr-accent: #a1173c;
-}
-
-.shoe-white {
-  --clr-inner: #fce4b3;
-  --clr-outer: #eac886;
-  --clr-accent: #2f4858;
-}
-
-.shoe-blue {
-  --clr-inner: #6dd5ed;
-  --clr-outer: #2193b0;
-  --clr-accent: #008951;
+  font-weight: 600;
+  font-size: 2rem;
 }

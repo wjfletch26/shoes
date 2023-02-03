@@ -20,6 +20,7 @@ h2,
 h3,
 p {
   margin: 0;
+  color: white;
 }
 
 section {
@@ -45,6 +46,7 @@ www.youtube.com/watch?v=hqPJHOqW-_I */
   display: flex;
   gap: 1em;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .split > * {
   flex-basis: 30%;
@@ -107,7 +109,7 @@ www.youtube.com/watch?v=hqPJHOqW-_I */
     background: url(../img/shoe-3.png), radial-gradient(rgb(147, 44, 44), rgb(56, 39, 142));
     /* background: url(../img/shoe-3.png), radial-gradient(#444, #111); */
     background-blend-mode: multiply;
-    background-size: 25%;
+    background-size: 50%;
     /* background-attachment: fixed;
      background-repeat: no-repeat;
      background-position: center center; */
@@ -115,7 +117,15 @@ www.youtube.com/watch?v=hqPJHOqW-_I */
 }
 
 .featured {
-  background: rgb(242, 222, 222);
+  background: #eee;
+  background: radial-gradient(var(--clr-inner, #2193b0), var(--clr-outer, purple));
+  padding: 1em;
+  margin-top: 3em;
+  margin-left: 2em;
+  margin-right: 2em;
+  border-radius: 2em;
+  margin-bottom: -2em;
+  text-align: center;
 }
 .featured__item {
   display: block;
@@ -123,7 +133,7 @@ www.youtube.com/watch?v=hqPJHOqW-_I */
   transform: scale(0.85);
   transition: transform 250ms ease-in-out;
   text-decoration: none;
-  color: rgb(52, 44, 147);
+  color: #040102;
   text-align: center;
   line-height: 1.2;
 }
@@ -132,7 +142,7 @@ www.youtube.com/watch?v=hqPJHOqW-_I */
 }
 .featured__item:hover .featured__details, .featured__item:focus .featured__details {
   opacity: 1;
-  text-shadow: 0 0 2em white;
+  text-shadow: 0 0 2em #701414;
 }
 .featured__item::after {
   content: "";
@@ -152,4 +162,43 @@ www.youtube.com/watch?v=hqPJHOqW-_I */
   display: block;
   font-weight: 600;
   font-size: 2rem;
+}
+
+.product {
+  background: radial-gradient(var(--clr-inner, #2193b0), var(--clr-outer, purple));
+  padding: 4em;
+  border-radius: 1em;
+  margin-bottom: 4em;
+  text-align: center;
+}
+.product__title {
+  font-size: clamp(3rem, 5vw + 1rem, 5.5rem);
+  text-transform: uppercase;
+  line-height: 1;
+  color: #fff;
+}
+.product__image {
+  margin: -em 0 0 0;
+}
+
+.hero {
+  --clr-accent: #faa700;
+}
+
+.shoe-red {
+  --clr-inner: #faa700;
+  --clr-outer: #e48d00;
+  --clr-accent: #a1173c;
+}
+
+.shoe-white {
+  --clr-inner: #fce4b3;
+  --clr-outer: #eac886;
+  --clr-accent: #2f4858;
+}
+
+.shoe-blue {
+  --clr-inner: #6dd5ed;
+  --clr-outer: #2193b0;
+  --clr-accent: #008951;
 }

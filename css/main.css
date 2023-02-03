@@ -137,37 +137,6 @@ section {
   font-size: 2.5rem;
 }
 
-.featured {
-  background: rgb(242, 222, 222);
-}
-.featured__item {
-  display: block;
-  position: relative;
-  transform: scale(1.15);
-  transition: transform 250ms ease-in-out;
-  text-decoration: none;
-  color: rgb(52, 44, 147);
-  text-align: center;
-  line-height: 1.2;
-}
-.featured__item:hover, .featured__item:focus {
-  transform: scale(1);
-}
-.featured__item:hover .featured__details, .featured__item:focus .featured__details {
-  opacity: 1;
-  text-shadow: 0 0 2em white;
-}
-.featured__item::after {
-  content: "";
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  padding: 75% 75% 0 0;
-  border-radius: 50%;
-  background: #2193b0;
-  z-index: -1;
-}
-
 .product {
   background: radial-gradient(var(--clr-inner, limegreen), var(--clr-outer, purple));
   padding: 3em;

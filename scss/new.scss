@@ -21,7 +21,7 @@ h2,
 h3,
 p {
   margin: 0;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 section {
@@ -100,6 +100,7 @@ www.youtube.com/watch?v=hqPJHOqW-_I */
 }
 
 .primary-title {
+  color: white;
   font-size: 4rem;
   font-size: clamp(3rem, calc(5vw + 1rem), 4.5rem);
   /* The clamp(smallest, grow rate, largest) CSS function clamps a middle value within a range of values between a defined minimum bound and a maximum bound. The function takes three parameters: a minimum value, a preferred value, and a maximum allowed value. */
@@ -140,12 +141,10 @@ www.youtube.com/watch?v=hqPJHOqW-_I */
   background: #eee;
   // background: rgb(223, 222, 242);
 
-  background: radial-gradient(
-    var(--clr-inner, #2193b0),
-    var(--clr-outer, purple)
-  );
-  padding: 1em;
-  margin-top: 3em;
+  background: radial-gradient(#2193b04f, #80008057);
+
+  padding: 3em;
+  margin-top: 2em;
   margin-left: 2em;
   margin-right: 2em;
   border-radius: 2em;
@@ -216,7 +215,34 @@ www.youtube.com/watch?v=hqPJHOqW-_I */
     // text-shadow: 0 0 0.2em rgba(rgb(0, 0, 0), 0.2);
   }
   &__image {
-    margin: -em 0 0 0;
+    margin: -5em 0 0 0;
+  }
+
+  @media (min-width: 45em) {
+    text-align: left;
+    // margin-bottom: 12em;
+
+    &__title {
+      margin: 0;
+    }
+
+    &__image {
+      float: right;
+      width: 55%;
+      outline: 2px solid red;
+      shape-outside: url(../img/shoe-1.png);
+      shape-margin: 5em;
+      margin: 0 -2em 0 0;
+    }
+
+    &.shoe-left {
+      .product__image {
+        float: left;
+        shape-outside: url(../img/shoe-2.png);
+        margin: 0 0 0 -3em;
+        shape-margin: 5em;
+      }
+    }
   }
 }
 
@@ -241,39 +267,3 @@ www.youtube.com/watch?v=hqPJHOqW-_I */
   --clr-outer: #2193b0;
   --clr-accent: #008951;
 }
-
-// display: block;
-// position: relative;
-// -webkit-transform: scale(0.85);
-// transform: scale(1.15);
-// -webkit-transition: -webkit-transform 250ms ease-in-out;
-// transition: -webkit-transform 250ms ease-in-out;
-// transition: transform 250ms ease-in-out;
-// transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
-// text-decoration: none;
-// color: #333;
-// text-align: center;
-// line-height: 1.2;
-
-// .featured__item:hover,
-// .featured__item:focus {
-//   -webkit-transform: scale(1);
-//   transform: scale(1);
-// }
-
-// .featured__item:hover .featured__details,
-// .featured__item:focus .featured__details {
-//   opacity: 1;
-//   text-shadow: 0 0 2em white;
-// }
-
-// .featured__item::after {
-//   content: "";
-//   position: absolute;
-//   top: 10%;
-//   left: 10%;
-//   padding: 75% 75% 0 0;
-//   border-radius: 50%;
-//   background: #2193b0;
-//   z-index: -1;
-// }

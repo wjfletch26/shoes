@@ -20,7 +20,7 @@ h2,
 h3,
 p {
   margin: 0;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 section {
@@ -81,6 +81,7 @@ www.youtube.com/watch?v=hqPJHOqW-_I */
 }
 
 .primary-title {
+  color: white;
   font-size: 4rem;
   font-size: clamp(3rem, 5vw + 1rem, 4.5rem);
   /* The clamp(smallest, grow rate, largest) CSS function clamps a middle value within a range of values between a defined minimum bound and a maximum bound. The function takes three parameters: a minimum value, a preferred value, and a maximum allowed value. */
@@ -118,9 +119,9 @@ www.youtube.com/watch?v=hqPJHOqW-_I */
 
 .featured {
   background: #eee;
-  background: radial-gradient(var(--clr-inner, #2193b0), var(--clr-outer, purple));
-  padding: 1em;
-  margin-top: 3em;
+  background: radial-gradient(rgba(33, 147, 176, 0.3098039216), rgba(128, 0, 128, 0.3411764706));
+  padding: 3em;
+  margin-top: 2em;
   margin-left: 2em;
   margin-right: 2em;
   border-radius: 2em;
@@ -178,7 +179,29 @@ www.youtube.com/watch?v=hqPJHOqW-_I */
   color: #fff;
 }
 .product__image {
-  margin: -em 0 0 0;
+  margin: -5em 0 0 0;
+}
+@media (min-width: 45em) {
+  .product {
+    text-align: left;
+  }
+  .product__title {
+    margin: 0;
+  }
+  .product__image {
+    float: right;
+    width: 55%;
+    outline: 2px solid red;
+    shape-outside: url(../img/shoe-1.png);
+    shape-margin: 5em;
+    margin: 0 -2em 0 0;
+  }
+  .product.shoe-left .product__image {
+    float: left;
+    shape-outside: url(../img/shoe-2.png);
+    margin: 0 0 0 -3em;
+    shape-margin: 5em;
+  }
 }
 
 .hero {

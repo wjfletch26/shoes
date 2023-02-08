@@ -7,12 +7,16 @@
 body {
   margin: 0;
   font-family: "Noto Sans JP", sans-serif;
-  line-height: 1.6;
+  line-height: 2.5;
 }
 
 img {
   max-width: 100%;
   display: block;
+}
+
+.white_text {
+  color: white;
 }
 
 h1,
@@ -21,6 +25,7 @@ h3,
 p {
   margin: 0;
   color: rgb(0, 0, 0);
+  font-size: 1rem;
 }
 
 section {
@@ -38,10 +43,6 @@ https://www.w3schools.com/cssref/css_selectors.php
 https://https://www.youtube.com/watch?v=TbfIyjNTXbA
 www.youtube.com/watch?v=hqPJHOqW-_I */
 /* In video https://www.youtube.com/watch?v=X1dz0xRbSJc&t=1417s at time 22:16 the below gets explained. */
-.spacing > * + * {
-  margin-top: var(--spacer, 2rem);
-}
-
 .split {
   display: flex;
   gap: 1em;
@@ -70,7 +71,6 @@ www.youtube.com/watch?v=hqPJHOqW-_I */
   background: var(--clr-accent, rgb(48, 79, 220));
   border-radius: 0.25em;
   /* BUTTON TRANSFORMATION characteristics */
-  -webkit-transition: opacity 250ms linear, -webkit-transform 250ms ease-in-out;
 }
 
 .btn:hover,
@@ -118,15 +118,7 @@ www.youtube.com/watch?v=hqPJHOqW-_I */
 }
 
 .featured {
-  background: #eee;
-  background: radial-gradient(rgba(33, 147, 176, 0.3098039216), rgba(128, 0, 128, 0.3411764706));
-  padding: 3em;
-  margin-top: 2em;
-  margin-left: 2em;
-  margin-right: 2em;
-  border-radius: 2em;
-  margin-bottom: -2em;
-  text-align: center;
+  background: rgba(34, 34, 34, 0.1490196078);
 }
 .featured__item {
   display: block;
@@ -134,7 +126,7 @@ www.youtube.com/watch?v=hqPJHOqW-_I */
   transform: scale(0.85);
   transition: transform 250ms ease-in-out;
   text-decoration: none;
-  color: #040102;
+  color: #853f57;
   text-align: center;
   line-height: 1.2;
 }
@@ -143,7 +135,7 @@ www.youtube.com/watch?v=hqPJHOqW-_I */
 }
 .featured__item:hover .featured__details, .featured__item:focus .featured__details {
   opacity: 1;
-  text-shadow: 0 0 2em #701414;
+  text-shadow: 0 0 2em #40b6cb;
 }
 .featured__item::after {
   content: "";
@@ -152,7 +144,7 @@ www.youtube.com/watch?v=hqPJHOqW-_I */
   left: 10%;
   padding: 75% 75% 0 0;
   border-radius: 50%;
-  background: #2193b0;
+  background: #1cbfe8;
   z-index: -1;
 }
 .featured__details {
@@ -167,7 +159,7 @@ www.youtube.com/watch?v=hqPJHOqW-_I */
 
 .product {
   background: radial-gradient(var(--clr-inner, #2193b0), var(--clr-outer, purple));
-  padding: 4em;
+  padding: 3em;
   border-radius: 1em;
   margin-bottom: 4em;
   text-align: center;
@@ -177,13 +169,15 @@ www.youtube.com/watch?v=hqPJHOqW-_I */
   text-transform: uppercase;
   line-height: 1;
   color: #fff;
+  text-shadow: 0 0 0.2em rgba(0, 0, 0, 0.2);
 }
 .product__image {
-  margin: -5em 0 0 0;
+  margin: -2em 0 0 0;
 }
-@media (min-width: 45em) {
+@media (min-width: 45rem) {
   .product {
     text-align: left;
+    margin-bottom: 8em;
   }
   .product__title {
     margin: 0;
@@ -191,16 +185,15 @@ www.youtube.com/watch?v=hqPJHOqW-_I */
   .product__image {
     float: right;
     width: 55%;
-    outline: 2px solid red;
     shape-outside: url(../img/shoe-1.png);
-    shape-margin: 5em;
-    margin: 0 -2em 0 0;
+    shape-margin: 1em;
+    margin: 1 -5em 0 0;
   }
   .product.shoe-left .product__image {
     float: left;
     shape-outside: url(../img/shoe-2.png);
     margin: 0 0 0 -3em;
-    shape-margin: 5em;
+    shape-margin: 2em;
   }
 }
 

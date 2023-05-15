@@ -9,7 +9,7 @@ Knowing that typical CSS Stylesheets can get *quite* large, SASS seemed to be th
 
 ## Technologies Used
 - HTML
-- [SASS](https://sass-lang.com/)(scss => css) 
+- [SASS](https://sass-lang.com/) (scss => css) 
 - JavaScript
 - Google Font API
 
